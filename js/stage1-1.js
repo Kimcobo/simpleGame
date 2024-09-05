@@ -44,6 +44,7 @@ const ax=document.querySelector('.axe');
     Ob.innerHTML=obj;
     // 게임 스타트
     const gameStart=()=>{
+      localStorage.setItem('progress1-1','yes');
       countDownDisplay.style.display="none";
       // countDownDisplay.remove();
       document.body.style.cursor="none";
@@ -130,6 +131,8 @@ const gameEnd=()=>{
     });
     // =============================
     const gameClear=()=>{
+      localStorage.setItem('Clear1-1','yes');
+      localStorage.setItem('progress1-2','yes');
       clearInterval(targetTimer);
       clear.style.display="flex";
       document.body.style.cursor="default";

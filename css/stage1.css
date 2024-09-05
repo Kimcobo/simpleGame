@@ -35,7 +35,7 @@ section{
     width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
     font-weight:bold; color:#f60; 
     background:url("../images/objective.jpg") no-repeat center top;
-    position:absolute; left:100px;  top:150px;
+    position:absolute; left:150px;  top:150px;
 }
 .play>.hp{
     width: 500px; height:20px; position: absolute; left: 50%;

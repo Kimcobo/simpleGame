@@ -28,6 +28,9 @@ span{
 .init>.opt>.help{
     color: #22f;
 }
+.init>.etc>.clear{
+    color: #fc0;
+}
 .howto{
     display: none;
     /* 이 아래는 디자인 참고용 임시 색상 */

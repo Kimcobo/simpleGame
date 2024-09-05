@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>journey stage 1</title>
+  <link rel="stylesheet" href="css/stage1.css" type="text/css">
+</head>
+<body>
+  <section class="play">
+    <h2>STAGE 1-1</h2>
+    <div class="play_area">
+      <div class="z1">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z2">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z3">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z4">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z5">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z6">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z7">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z8">
+        <div class="zombies"><img src="images/Zombie.png" alt="" draggable="false"></div>
+      </div>
+      <div class="z9">
+        <div class="zombies">
+          <img src="images/Zombie.png" alt="" draggable="false">
+        </div>
+      </div>
+    </div>
+    <p class="obj"></p>
+    <div class="hp">
+      <div class="currentHP"></div>
+    </div>
+  </section>
+  <section class="gameover">
+    <h2>GAME &nbsp;OVER</h2>
+    <img src="images/game_over.jpg" alt="">
+    <div class="continue">
+      <button class="again" type="button">TRY AGAIN</button>
+      <button class="give_up" type="button">GIVE UP</button>
+    </div>
+  </section>
+  <section class="clear">
+    <h2>CLEAR!</h2>
+    <div class="progress"></div> <!--스테이지 진행도 (이미지?)-->
+    <div class="select"> <!-- 지역마다 저장이 힘들면 여긴 안 만들 수도 있음-->
+      <span id="next">NEXT AREA</span> <!-- localStorage로 진행도 저장가능? -->
+      <span id="main">BACK TO MAIN</span> <!-- 메인 돌아가기 -->
+    </div>
+  </section>
+  <span class="axe"><img src="images/axe.png" alt=""></span>
+  <script src="js/stage1-1.js"></script>
+</body>
+</html>

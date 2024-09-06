@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.cdnfonts.com/css/the-centurion');
+@import url('https://fonts.cdnfonts.com/css/morris-roman');
 body,html{  width:100%;  height:100%;  }
 body,section,h1,button,h2{  margin: 0; padding: 0; }
 img{  display:block;  }
@@ -8,13 +8,13 @@ body{
     background: rgb(255,0,0);
     background: linear-gradient(180deg, rgba(255,0,0,1) 0%, #7a0000 50%, rgba(0,0,0,1) 100%);
     display: flex; justify-content:center; align-items:center;
-    font-family:'The Centurion', Arial, sans-serif;
+    font-family:'Morris Roman', Arial, sans-serif;
     font-size: 48px; color: #f30;
 }
 section{
     background:#151515; border:1px solid #151515; width:1200px; height:800px;
     flex-flow:column nowrap; justify-content:center; align-items:center;
-    gap:40px; display: flex;
+    gap:40px; display: flex; position: relative;
 }
 section>div{
     width: 800px;
@@ -25,4 +25,9 @@ span{
     line-height: 48px; cursor: pointer;
     user-select:none;
     color:rgba(255,0,0,0.3);
+}
+.back{
+    font-size: 30px; color: #fff;
+    position: absolute; left: 50%; transform:translateX(-50%);
+    bottom: 20px;
 }

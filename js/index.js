@@ -16,6 +16,9 @@ document.querySelector('.back').addEventListener('click',()=>{
     how.style.display="none";
     init.style.display="flex";
 });
+document.querySelector('.achievement').addEventListener('click',()=>{
+    window.location.href="achievement.html";
+});
 if(progressCheck){
     const ctn=document.createElement('span');
     ctn.innerHTML="CONTINUE";

@@ -9,13 +9,13 @@ body{
     background: rgb(255,0,0);
     background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(122,0,0,1) 50%, rgba(0,0,0,1) 100%);
     display:flex; justify-content:center; align-items:center;
-    position: relative; font-family:'Morris Roman', Arial, sans-serif;
+    position: relative; font-family:Arial, sans-serif;
     color: #f30; font-size: 36px;
 }
 section{
     width:1200px; height:800px; background:#fff; border:1px solid #222;
 }
-.play{   position:relative;}
+.play{position:relative;}
 .play>h2{  
     width:238px;  height:146px;  margin:12px auto 0px; user-select:none;
     font-size: 36px; text-align: center; line-height: 146px;

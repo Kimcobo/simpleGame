@@ -41,6 +41,8 @@ const ax=document.querySelector('.axe');
     let clickable=false; // 연속클릭 방지 상태변수
     let isAttack=false;
     let targetTimer="";
+    let takingDamage=false;
+    let completedAchievement=[];
     Ob.innerHTML=obj;
     // 게임 스타트
     const gameStart=()=>{
@@ -61,13 +63,15 @@ const ax=document.querySelector('.axe');
           clickable=false;
           if(isAttack==true){
             curHP.style.width=`${parseInt(curHP.style.width)-50}px`;
+            takingDamage=true;
             isAttack=false;
             if(parseInt(curHP.style.width)<=0){
               gameEnd();
             }
           }
+          console.log(parseInt(curHP.style.width));
+          console.log(takingDamage);
         },1000);
-        console.log(parseInt(curHP.style.width));
         // setTimeout(()=>{},500);
       }
       targetTimer=setInterval(randomTarget,2000);
@@ -131,6 +135,11 @@ const gameEnd=()=>{
     });
     // =============================
     const gameClear=()=>{
+      if(takingDamage==false){
+        localStorage.setItem('FirstNoDamage','yes');
+        localStorage.setItem('NoDamage1-1','yes');
+      }
+      localStorage.setItem('FirstVictory','yes');
       localStorage.setItem('Clear1-1','yes');
       localStorage.setItem('progress1-2','yes');
       clearInterval(targetTimer);
@@ -144,3 +153,12 @@ const gameEnd=()=>{
     selectMain.addEventListener('click',()=>{
       window.location.href="index.html";
     });
+    /*
+    const checkAchievement=()=>{
+      let alreadyDid=false;
+      if(!alreadyDid){
+
+        alreadyDid=true;
+      }
+    }
+    */

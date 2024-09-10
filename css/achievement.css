@@ -63,6 +63,10 @@ section>.innerbox{
     background-color:var(--silver);
     filter:brightness(30%);
 }
+.innerbox>.gold{
+    background-color:var(--gold);
+    filter:brightness(30%);
+}
 .innerbox>.goal4{
     margin-bottom: 0px;
 }

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>journey stage 1-2</title>
+    <link rel="stylesheet" href="css/stage1.css" type="text/css">
 </head>
 <body>
-    <section class="play2">
+    <section class="play">
         <h2>STAGE 1-2</h2>
-        <div class="play_area2">
+        <div class="play_area">
             <div class="s1">
                 <div class="skeletons"><img src="images/Skeleton.png" alt="" draggable="false"></div>
             </div>
@@ -39,16 +40,28 @@
             </div>
             </div>
         </div>
-        <p class="obj2">40</p>
+        <p class="obj2"></p>
         <div class="hp">
             <div class="currentHP"></div>
         </div>
-        </section>
-        <section class="complete">
-        <h2>STAGE COMPLETE!</h2>
-        <p>Thanks for playing!</p> <!-- 2스테 만들면 Now you can play stage 2!-->
-        <span>NEXT STAGE</span>
-        <span>BACK TO MAIN</span>
-        </section>
+    </section>
+    <section class="gameover">
+        <h2>GAME &nbsp;OVER</h2>
+        <img src="images/game_over.jpg" alt="">
+        <div class="continue">
+            <button class="again" type="button">TRY AGAIN</button>
+            <button class="give_up" type="button">GIVE UP</button>
+        </div>
+    </section>
+    <section class="clear">
+        <h2>CLEAR!</h2>
+        <div class="progress"></div>
+        <div class="select">
+            <span id="next">NEXT AREA</span>
+            <span id="main">BACK TO MAIN</span>
+        </div>
+    </section>
+    <span class="axe"><img src="images/axe.png" alt=""></span>
+    <script src="js/stage1-2.js"></script>
 </body>
 </html>

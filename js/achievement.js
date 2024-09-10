@@ -21,6 +21,8 @@ const FirstNoDamage=localStorage.getItem('FirstNoDamage');
 const NoDamageOneOne=localStorage.getItem('NoDamage1-1');
 const FirstVictory=localStorage.getItem('FirstVictory');
 const ClearOneOne=localStorage.getItem('Clear1-1','yes');
+const ClearOneTwo=localStorage.getItem('Clear1-2');
+const NoDamageOneTwo=localStorage.getItem('NoDamage1-2');
 if(FirstVictory){
     const data0=document.querySelector('div[data-index="0"]');
     const check0=document.querySelector('.check0');
@@ -51,6 +53,22 @@ if(NoDamageOneOne){
     data3.style.filter="brightness(100%)";
     check3.innerHTML="Unlocked";
     check3.style.color="#fff";
+    totalCompletes++;
+}
+if(ClearOneTwo){
+    const data4=document.querySelector('div[data-index="4"]');
+    const check4=document.querySelector('.check4');
+    data4.style.filter="brightness(100%)";
+    check4.innerHTML="Unlocked";
+    check4.style.color="#fff";
+    totalCompletes++;
+}
+if(NoDamageOneTwo){
+    const data5=document.querySelector('div[data-index="5"]');
+    const check5=document.querySelector('.check5');
+    data5.style.filter="brightness(100%)";
+    check5.innerHTML="Unlocked";
+    check5.style.color="#fff";
     totalCompletes++;
 }
 console.log(totalCompletes);

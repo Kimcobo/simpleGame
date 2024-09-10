@@ -1,7 +1,13 @@
 @charset "UTF-8";
 @import url('https://fonts.cdnfonts.com/css/morris-roman');
+:root{
+    --bronze:rgba(184, 115, 51, 1);
+    --silver:rgba(192, 192, 192, 1);
+    --gold:rgba(255, 215, 0, 1);
+    --platinum:rgba(21, 213, 239, 1);
+}
 body,html{  width:100%;  height:100%;  }
-body,section,h1,button,h2{  margin: 0; padding: 0; }
+body,section,h1,button,h2,p{  margin: 0; padding: 0; }
 img{  display:block;  }
 button{  border:0;  background:transparent; }
 /* index */
@@ -29,9 +35,11 @@ section{
     width:94px;  height:92px; background:transparent url("../images/portal.png") no-repeat;
     background-size:cover;
 }
-.play>.play_area>div>.zombies{  width:100%;  height:100%; /* overflow:hidden */}
+.play>.play_area>div>.zombies{  width:96px;  height:187px; /* overflow:hidden */}
 .play>.play_area>div>.zombies>img{  display:none;  }
-.play>.obj{
+.play>.play_area>div>.skeletons{  width:96px;  height:187px; /* overflow:hidden */}
+.play>.play_area>div>.skeletons>img{  display:none;  }
+.play>.obj, .play>.obj2{
     width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
     font-weight:bold; color:#f60; 
     background:url("../images/objective.jpg") no-repeat center top;
@@ -45,9 +53,6 @@ section{
 .play>.hp>.currentHP{
     height:20px; position: absolute; left: 0px; top: 0px;
     background: #f10; display: inline-block;
-}
-.play2{
-    display: none;
 }
 .gameover{  
     display:flex; flex-flow:column nowrap;
@@ -92,6 +97,33 @@ section{
 .clear>.select>.span{
     display: inline-block;
     font-size: 36px;
+}
+.alarm{
+    position: absolute; right: 0; top: 0; width: 400px; height: 100px;
+}
+.alarm>.achieve{
+    display: flex; width: 400px; height: 100px;
+    background-color: #222; position: absolute; right: 0; top: 0;
+    display: none;
+}
+.alarm>.achieve>img{
+    display: block; border: 0px none; width: 90px; height: 90px;
+    margin-top: 5px; margin-left: 5px;
+}
+.alarm>.achieve>div{
+    margin-left: 20px; margin-top: 15px;
+}
+.alarm>.bronze{
+    background-color:var(--bronze);
+}
+.alarm>.silver{
+    background-color:var(--silver);
+}
+.alarm>.achieve>div>p{
+    font-size: 20px; text-align: center; margin-bottom: 20px;
+}
+.alarm>.achieve>div>span{
+    font-size: 18px; text-align: center; display: block;
 }
 .complete{
     display: none;

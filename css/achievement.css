@@ -7,7 +7,7 @@
     --platinum:rgba(21, 213, 239, 1);
 }
 body,html{  width:100%;  height:100%;  }
-body,section,h1,h2,h3,button{  margin: 0; padding: 0; }
+body,section,h1,h2,h3,button,span,div{  margin: 0; padding: 0; }
 img{  display:block; border: 0px none; }
 body{  
     background: rgb(255,0,0);
@@ -67,8 +67,9 @@ section>.innerbox{
     background-color:var(--gold);
     filter:brightness(30%);
 }
-.innerbox>.goal4{
-    margin-bottom: 0px;
+.innerbox>.platinum{
+    background-color:var(--platinum);
+    filter:brightness(30%);
 }
 .back{
     position: absolute; right: 10px; top: 10px;

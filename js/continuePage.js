@@ -5,6 +5,7 @@ const span12=document.querySelector('.onetwo');
 const progress1Boss=localStorage.getItem('progress1-Boss');
 const span1Boss=document.querySelector('.oneBoss');
 const back=document.querySelector('.back');
+const clear1Boss=localStorage.getItem('Clear1-Boss');
 if(progress11){
     span11.style.color="rgba(33, 33, 255, 1)";
     span11.addEventListener('click',()=>{
@@ -23,6 +24,9 @@ if(progress1Boss){
     span1Boss.addEventListener('click',()=>{
         window.location.href="stage1-Boss.html";
     });
+    if(clear1Boss){
+        span1Boss.style.color='rgba(33,33,255,1)';
+    }
 }
 back.addEventListener('click',()=>{
     window.location.href="index.html";

@@ -42,6 +42,7 @@
     let isAttack=false;
     let targetTimer="";
     let takingDamage=false;
+    let healthPoint=2;
     Ob.innerHTML=obj;
     // 게임 스타트
     const gameStart=()=>{
@@ -49,6 +50,8 @@
         // countDownDisplay.remove();
         //document.body.style.cursor="none";
         //ax.style.display="block";
+        // 회복하는 함수
+        // 고민중
         // 타겟 랜덤으로 나오기
         const randomTarget=()=>{
         nameNum=Math.ceil(Math.random()*9); // Math.floor(Math.random()*9)+1
@@ -60,22 +63,22 @@
             target.style.display="none";
             clickable=false;
             if(isAttack==true){
-            curHP.style.width=`${parseInt(curHP.style.width)-50}px`;
-            takingDamage=true;
-            isAttack=false;
-            if(parseInt(curHP.style.width)<=0){
-                gameEnd();
-            }
+                curHP.style.width=`${parseInt(curHP.style.width)-50}px`;
+                takingDamage=true;
+                isAttack=false;
+                if(parseInt(curHP.style.width)<=0){
+                    gameEnd();
+                }
             }
             // console.log(parseInt(curHP.style.width));
             // console.log(takingDamage);
+            // 시간 안에 못 잡으면 적들 체력 원래대로 회복
         },800);
         // setTimeout(()=>{},500);
         }
         targetTimer=setInterval(randomTarget,1000);
         // ==================================
-        // 1대만 때리고 못 잡고 넘어가면 다시 나올 때 풀피로 등장하게
-        const skels=document.querySelectorAll('.skeletons>img')
+        const skels=document.querySelectorAll('.skeletons>img');
         skels.forEach((ms)=>{
             let health=2;
         ms.addEventListener('click',()=>{
@@ -92,9 +95,9 @@
                     health=2;
                 }
                 if(obj==0){
-                gameClear();
+                    gameClear();
                 }
-                console.log(health);
+                // console.log(health);
             }
         });
         });

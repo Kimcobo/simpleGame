@@ -23,27 +23,27 @@ section{
 }
 .play{position:relative;}
 .play>h2{  
-    width:238px;  height:146px;  margin:12px auto 0px; user-select:none;
+    width:300px;  height:120px;  margin:0px auto 0px; user-select:none;
     font-size: 36px; text-align: center; line-height: 146px;
 }
 .play>.play_area{
-    width:512px; height:332px; margin:108px auto 0; display:flex; flex-flow:row wrap;
-    justify-content:space-between; align-content:space-between; column-gap:115px;
+    width:900px; height:540px; margin:70px auto 0;
     user-select:none;
 }
-.play>.play_area>div{ 
-    width:94px;  height:92px; background:transparent url("../images/portal.png") no-repeat;
-    background-size:cover;
+.play>.play_area>.boss{ 
+    width:900px; height:540px;
+    display:flex; flex-flow:row wrap;
+    justify-content:center; align-content:center;
+    background:transparent url('../images/Boss.png') no-repeat center top;
 }
-.play>.play_area>div>.zombies{  width:96px;  height:187px; /* overflow:hidden */}
-.play>.play_area>div>.zombies>img{  display:none;  }
-.play>.play_area>div>.skeletons{  width:96px;  height:187px; /* overflow:hidden */}
-.play>.play_area>div>.skeletons>img{  display:none;  }
-.play>.obj, .play>.obj2{
-    width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
-    font-weight:bold; color:#f60; 
-    background:url("../images/objective.jpg") no-repeat center top;
-    position:absolute; left:150px;  top:150px;
+.play>.play_area>.boss>div{
+    width:300px; height:180px;
+}
+.play>.play_area>.boss>div>.BossAttack{
+    width:300px; height:180px;
+}
+.play>.play_area>.boss>div>.BossAttack>img{
+    display:none;
 }
 .play>.hp{
     width: 500px; height:20px; position: absolute; left: 50%;
@@ -53,6 +53,26 @@ section{
 .play>.hp>.currentHP{
     height:20px; position: absolute; left: 0px; top: 0px;
     background: #f10; display: inline-block;
+}
+.play>.bossHP{
+    width: 1000px; height: 35px; position: absolute; left: 50%;
+    transform:translateX(-50%); top:132px; border: 5px solid var(--gold);
+    background:#fff;
+}
+.play>.bossHP>.bossCurrentHP{
+    height: 35px; position: absolute; left:0; top: 0;
+    display: inline-block; background: #f10;
+}
+.play>.stun{
+    width: 20px; height: 500px; position: absolute; right: 50px;
+    top: 60%; transform:translateY(-50%); background: #03f;
+}
+.play>.stun>.currentStun{
+    width: 20px; position: absolute;  left: 0; bottom: 0;
+    background-color:var(--gold); display: flex; flex-direction:column-reverse;
+}
+.play>.stun>span{
+    position: absolute; bottom: -50px; right:-32px;
 }
 .gameover{  
     display:flex; flex-flow:column nowrap;
@@ -89,14 +109,18 @@ section{
     display: none;
 }
 .clear>h2{
-    font-size: 72px;
+    font-size: 100px;
+}
+.clear>p{
+    font-size: 50px; color:var(--gold); margin-top: 60px;
+    margin-bottom: 60px;
 }
 .clear>.select{
-    display: flex; gap: 60px;
+    display: flex; color: #fff;
 }
 .clear>.select>.span{
     display: inline-block;
-    font-size: 36px;
+    font-size: 44px;
 }
 .alarm{
     position: absolute; right: 0; top: 0; width: 400px; height: 100px;

@@ -136,10 +136,8 @@ const gameEnd=()=>{
     // =============================
     const gameClear=()=>{
       if(takingDamage==false){
-        localStorage.setItem('FirstNoDamage','yes');
         localStorage.setItem('NoDamage1-1','yes');
       }
-      localStorage.setItem('FirstVictory','yes');
       localStorage.setItem('Clear1-1','yes');
       localStorage.setItem('progress1-2','yes');
       clearInterval(targetTimer);

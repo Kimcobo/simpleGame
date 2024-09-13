@@ -21,7 +21,7 @@ body{
 section{
     width:1200px; height:800px; background:#fff; border:1px solid #222;
 }
-.play{position:relative;}
+.play, .play2{position:relative;}
 .play>h2{  
     width:238px;  height:146px;  margin:12px auto 0px; user-select:none;
     font-size: 36px; text-align: center; line-height: 146px;
@@ -32,14 +32,31 @@ section{
     user-select:none;
 }
 .play>.play_area>div{ 
-    width:94px;  height:92px; background:transparent url("../images/portal.png") no-repeat;
+    width:96px;  height:187px; background:transparent url("../images/portal.png") no-repeat;
     background-size:cover;
+}
+.play2>h2{  
+    width:238px;  height:100px;  margin:0px auto 0px; user-select:none;
+    font-size: 36px; text-align: center; line-height: 146px;
+}
+.play2>.play_area2{
+    width:408px; height:581px; margin:50px auto 0; display:flex; flex-flow:row wrap;
+    justify-content:space-between; align-content:space-between; column-gap:60px;
+    user-select:none; row-gap:10px;
+}
+.play2>.play_area2>div{ 
+    width:96px;  height:187px; background:transparent url("../images/portal.png") no-repeat;
+    background-size:cover; position: relative;
 }
 .play>.play_area>div>.zombies{  width:96px;  height:187px; /* overflow:hidden */}
 .play>.play_area>div>.zombies>img{  display:none;  }
-.play>.play_area>div>.skeletons{  width:96px;  height:187px; /* overflow:hidden */}
-.play>.play_area>div>.skeletons>img{  display:none;  }
-.play>.obj, .play>.obj2{
+.play2>.play_area2>div>.skeletons{  width:96px;  height:187px; /* overflow:hidden */}
+.play2>.play_area2>div>.skeletons>img{  display:none;  }
+.play2>.play_area2>div>.skeletons>span{position: absolute; top:-10px;
+    left: 50%; transform:translateX(-50%); display: none;
+    width: 100px; height: 20px; background-color: #f10;
+}
+.play>.obj, .play2>.obj2{
     width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
     font-weight:bold; color:#f60; 
     background:url("../images/objective.jpg") no-repeat center top;
@@ -51,6 +68,15 @@ section{
     background: #03f; display: inline-block;
 }
 .play>.hp>.currentHP{
+    height:20px; position: absolute; left: 0px; top: 0px;
+    background: #f10; display: inline-block;
+}
+.play2>.hp{
+    width: 500px; height:20px; position: absolute; left: 50%;
+    transform:translateX(-50%); bottom: 30px;
+    background: #03f; display: inline-block;
+}
+.play2>.hp>.currentHP{
     height:20px; position: absolute; left: 0px; top: 0px;
     background: #f10; display: inline-block;
 }

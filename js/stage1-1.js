@@ -125,6 +125,7 @@ const gameEnd=()=>{
       obj=20;
       clickable=false;
       isAttack=false;
+      takingDamage=false;
       Ob.innerHTML=obj;
       InitCount();
       countDownInterval=setInterval(InitCount,1000);

@@ -106,30 +106,6 @@
         }
         targetTimer=setInterval(randomTarget,1000);
         // ==================================
-        document.querySelectorAll('.BossAttack>img').forEach((ms)=>{
-        ms.addEventListener('click',()=>{
-            if(clickable==true){
-                curStun.style.height=`${parseInt(curStun.style.height)+50}px`;
-                clickable=false;
-                isAttack=false;
-                ms.style.display="none";
-                if(parseInt(curStun.style.height)>=500){
-                    curStun.style.height="500px";
-                    isPossibleAttackBoss=true;
-                }
-            }
-        });
-        });
-        // SP 가득차면 보스 공격 가능하게
-        bossMain.addEventListener('click',()=>{
-            if(bossDown){
-                curBossHP.style.width=`${parseInt(curBossHP.style.width)-2}px`;
-                if(parseInt(curBossHP.style.width)<=0){
-                    bossMain.style.backgroundImage="url('images/BossDown.png')";
-                    gameClear();
-                }
-            }
-    });
         /* bossMain.addEventListener('click',()=>{
             if(isPossibleAttackBoss){
                 curBossHP.style.width=`${parseInt(curBossHP.style.width)-10}px`;
@@ -154,6 +130,30 @@
         ax.style.transform="rotate(0deg)";
         });*/
     }
+    document.querySelectorAll('.BossAttack>img').forEach((ms)=>{
+        ms.addEventListener('click',()=>{
+            if(clickable==true){
+                curStun.style.height=`${parseInt(curStun.style.height)+50}px`;
+                clickable=false;
+                isAttack=false;
+                ms.style.display="none";
+                if(parseInt(curStun.style.height)>=500){
+                    curStun.style.height="500px";
+                    isPossibleAttackBoss=true;
+                }
+            }
+        });
+        });
+        // SP 가득차면 보스 공격 가능하게
+        bossMain.addEventListener('click',()=>{
+            if(bossDown){
+                curBossHP.style.width=`${parseInt(curBossHP.style.width)-2}px`;
+                if(parseInt(curBossHP.style.width)<=0){
+                    bossMain.style.backgroundImage="url('images/BossDown.png')";
+                    gameClear();
+                }
+            }
+        });
     // =================================
     // 게임 끝
 const gameEnd=()=>{
@@ -174,6 +174,7 @@ const gameEnd=()=>{
         countDown=5;
         clickable=false;
         isAttack=false;
+        takingDamage=false;
         bossDown=false;
         isPossibleAttackBoss=false;
         curBossHP.style.width="1000px";

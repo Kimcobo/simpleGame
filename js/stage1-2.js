@@ -26,11 +26,10 @@
     curHP.style.width="500px";
     // console.log(curHP.style.width);
     // ============================
-    // 적 공격게이지 & 공격
     // 게임 시작
     let obj=10;
     const Ob=document.querySelector('.obj2');
-    const play=document.querySelector('.play');
+    const play=document.querySelector('.play2');
     const end=document.querySelector('.gameover');
     const again=end.querySelector('.again');
     const giveUp=end.querySelector('.give_up');
@@ -42,8 +41,8 @@
     let isAttack=false;
     let targetTimer="";
     let takingDamage=false;
-    let healthPoint=2;
     Ob.innerHTML=obj;
+    let health=2;
     // 게임 스타트
     const gameStart=()=>{
         countDownDisplay.style.display="none";
@@ -56,11 +55,16 @@
         const randomTarget=()=>{
         nameNum=Math.ceil(Math.random()*9); // Math.floor(Math.random()*9)+1
         const target=document.querySelector(`.s${nameNum} img`);
+        //const targetHP=document.querySelector(`.s${nameNum} span`);
+        health=2;
+        target.setAttribute('src','images/Skeleton.png');
         target.style.display="block";
+        //targetHP.style.display="block";
         clickable=true;
         isAttack=true;
         setTimeout(()=>{
             target.style.display="none";
+            //targetHP.style.display="none";
             clickable=false;
             if(isAttack==true){
                 curHP.style.width=`${parseInt(curHP.style.width)-50}px`;
@@ -78,29 +82,6 @@
         }
         targetTimer=setInterval(randomTarget,1000);
         // ==================================
-        const skels=document.querySelectorAll('.skeletons>img');
-        skels.forEach((ms)=>{
-            let health=2;
-        ms.addEventListener('click',()=>{
-            if(clickable==true){
-                health--;
-                ms.setAttribute('src','images/Skeleton_damaged.png');
-                if(health<=0){
-                    obj--;
-                    Ob.innerHTML=obj;
-                    clickable=false;
-                    isAttack=false;
-                    ms.style.display="none";
-                    ms.setAttribute('src','images/Skeleton.png');
-                    health=2;
-                }
-                if(obj==0){
-                    gameClear();
-                }
-                // console.log(health);
-            }
-        });
-        });
         // 해머 움직임
         /*document.body.style.cursor="none";
         document.addEventListener('mousemove',(e)=>{
@@ -117,6 +98,31 @@
         }); */
     }
     // =================================
+    const skels=document.querySelectorAll('.skeletons>img');
+        skels.forEach((ms)=>{
+                health=2;
+        ms.addEventListener('click',()=>{
+            console.log('click');
+            if(clickable==true){
+                health--;
+                // ms.dataset.count=1;
+                ms.setAttribute('src','images/Skeleton_damaged.png');
+                if(health<=0){
+                    obj--;
+                    Ob.innerHTML=obj;
+                    // ms.dataset.count=0;
+                    clickable=false;
+                    isAttack=false;
+                    ms.style.display="none";
+                    ms.setAttribute('src','images/Skeleton.png');
+                }
+                if(obj==0){
+                    gameClear();
+                }
+                // console.log(health);
+            }
+        });
+        });
     // 게임 끝
 const gameEnd=()=>{
     clearInterval(targetTimer);
@@ -136,7 +142,9 @@ const gameEnd=()=>{
         obj=10;
         clickable=false;
         isAttack=false;
+        takingDamage=false;
         Ob.innerHTML=obj;
+        health=2;
         InitCount();
         countDownInterval=setInterval(InitCount,1000);
     }

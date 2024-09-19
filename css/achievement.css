@@ -48,29 +48,44 @@ section>.innerbox{
 .text>p{
     font-size: 26px;
 }
-.innerbox>div[class*=goal]{
+/* 간단한 방법 */
+.innerbox{
+    overflow-y:scroll; overflow-x: hidden;
+}
+.innerbox div[class*=goal]{
     width: 1100px; height: 120px;
     margin-bottom: 10px; box-sizing: border-box; padding:10px;
     /* border: 3px solid #fff; */ border-radius:10px;
     padding-left:130px; background-image:url("../images/achievement_example.jpg");
     background-position:top 10px left 10px; background-repeat:no-repeat;
 }
-.innerbox>.bronze{
+.innerbox .bronze{
     background-color:var(--bronze);
     filter:brightness(30%);
 }
-.innerbox>.silver{
+.innerbox .silver{
     background-color:var(--silver);
     filter:brightness(30%);
 }
-.innerbox>.gold{
+.innerbox .gold{
     background-color:var(--gold);
     filter:brightness(30%);
 }
-.innerbox>.platinum{
+.innerbox .platinum{
     background-color:var(--platinum);
     filter:brightness(30%);
 }
+/*
+.track{
+    position:absolute; width: 26px; height: 640px;
+    top: 160px; right: 10px; background: #fff; border-radius:13px;
+}
+.track>.bar{
+    position: absolute; left: 0; top: 0; width: 26px; height: 26px;
+    border-radius: 50%; display: block;
+    background: #00f;
+}
+*/
 .back{
     position: absolute; right: 10px; top: 10px;
     font-size: 30px; color: #fff; cursor: pointer;

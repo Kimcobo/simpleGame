@@ -6,6 +6,13 @@
     --gold:rgba(255, 215, 0, 1);
     --platinum:rgba(21, 213, 239, 1);
 }
+@keyframes alarm{
+    0%{visibility:visible;}
+    25%{visibility:hidden;}
+    50%{visibility:visible;}
+    75%{visibility:hidden;}
+    100%{visibility:hidden;}
+}
 body,html{  width:100%;  height:100%;  }
 body,section,h1,button,h2,p{  margin: 0; padding: 0; }
 img{  display:block;  }
@@ -158,6 +165,11 @@ section{
 .complete{
     display: none;
 }
+.attack{
+    font-size: 70px; position: absolute; left:50%;
+    transform:translateX(-50%); top: 200px; font-weight: bold;
+    animation:alarm 0.14s linear infinite; display: none;
+}
 .axe{
     position:absolute;  left:0px;  top:0px;  z-index:100;  pointer-events:none;
     transition:transform 0.04s;
@@ -170,5 +182,8 @@ section{
     justify-content:center; align-items:center;
     font-size:100px; font-weight:bold; color:#f30;
     background-color:rgba(0,0,0,0.5); width:100%; height:100%;
+}
+.warning{
+    font-size: 200px; font-weight: bold;
 }
 /* game */

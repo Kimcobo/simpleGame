@@ -6,10 +6,11 @@ let totalCompletes=0;
 const percentChange=()=>{
     progressPercent.innerHTML=`${parseInt((totalCompletes/totalGoals)*100)}% Completed`;
     if(parseInt(totalCompletes/totalGoals)*100===100){
-        const congrat=document.createElement('span');
-        congrat.innerHTML="CONGRATULATIONS! YOU COMPLETED ALL ACHIEVEMENTS!!";
-        congrat.classList.add('congrat');
-        progress.appendChild(congrat);
+        // const congrat=document.createElement('span');
+        // congrat.innerHTML="CONGRATULATIONS! YOU COMPLETED ALL ACHIEVEMENTS!!";
+        // congrat.classList.add('congrat');
+        // progress.appendChild(congrat);
+        // congrat 추가 시 innerbox 높이 및 스크롤 이벤트 망가질까봐 일단 뺌
         progressPercent.style.color="#ffd700";
     }
 }
@@ -105,3 +106,9 @@ if(NoDamageOneOne && NoDamageOneTwo && NoDamageOneBoss){
 }
 console.log(totalCompletes);
 percentChange();
+const innerbox=document.querySelector('.innerbox');
+const wrap=document.querySelector('.wrapper');
+const track=document.querySelector('.track');
+const bar=document.querySelector('.bar');
+const barMax=parseInt(track.clientHeight-bar.clientHeight);
+console.log(barMax);

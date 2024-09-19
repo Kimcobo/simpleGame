@@ -7,6 +7,7 @@
     document.body.appendChild(countDownDisplay);
     let countDown=5;
     const InitCount=()=>{
+        countDownDisplay.classList.remove('warning');
         countDownDisplay.innerHTML=countDown;
         countDown--;
         if(countDown<0){ // ==-1
@@ -17,7 +18,12 @@
             gameStart();
         }
     }
-    InitCount();
+    const Warning=()=>{
+        countDownDisplay.innerHTML="WARNING";
+        countDownDisplay.classList.add('warning');
+    }
+    Warning();
+    setTimeout(InitCount,100000);
     let countDownInterval=setInterval(InitCount,1000);
     // ===============================================
     // hp바
@@ -42,7 +48,10 @@
     const clear=document.querySelector('.clear');
     const selectMain=document.querySelector('#main');
     const bossMain=document.querySelector('.boss');
+    const attack=document.querySelector('.attack');
     let nameNum=0; // 개체 구분 이름변수 (랜덤 1~9)
+    let nameNum2=0; // 개체 구분 이름변수 (nameNum을 제외한 랜덤 1~9)
+    let attackChance=2;
     let clickable=false; // 연속클릭 방지 상태변수
     let isAttack=false;
     let targetTimer="";
@@ -63,19 +72,31 @@
                 bossMain.style.backgroundImage="url('images/Boss.png')";
                 bossDown=false;
                 isPossibleAttackBoss=false;
+                attack.style.display="none";
                 targetTimer=setInterval(randomTarget,1000);
                 console.log(isPossibleAttackBoss);
         }
         const randomTarget=()=>{
+        attackChance=2;
         nameNum=Math.ceil(Math.random()*9); // Math.floor(Math.random()*9)+1
+        nameNum2=Math.ceil(Math.random()*9);
+        if(nameNum===nameNum2){
+            nameNum2=Math.ceil(Math.random()*9);
+        }
+        console.log(nameNum2);
         const target=document.querySelector(`.b${nameNum} img`);
+        const target2=document.querySelector(`.b${nameNum2} img`);
         target.style.display="block";
+        target2.style.display="block";
+        bossMain.style.backgroundImage="url('images/Boss_noarm.png')";
         clickable=true;
         isAttack=true;
         setTimeout(()=>{
             target.style.display="none";
+            target2.style.display="none";
+            bossMain.style.backgroundImage="url('images/Boss.png')";
             clickable=false;
-            if(isAttack===true){
+            if(attackChance>=1){
                 curHP.style.width=`${parseInt(curHP.style.width)-100}px`;
                 takingDamage=true;
                 isAttack=false;
@@ -91,6 +112,7 @@
                 bossMain.style.backgroundImage="url('images/BossDown.png')";
                 // bossDown=true;
                 curStun.style.height="0px";
+                attack.style.display="block";
                 console.log('DOWN!');
                 bossDown=true;
                 groggy=setTimeout(recover,3000);
@@ -134,14 +156,18 @@
         ms.addEventListener('click',()=>{
             if(clickable==true){
                 curStun.style.height=`${parseInt(curStun.style.height)+50}px`;
-                clickable=false;
-                isAttack=false;
                 ms.style.display="none";
+                attackChance--;
                 if(parseInt(curStun.style.height)>=500){
                     curStun.style.height="500px";
                     isPossibleAttackBoss=true;
                 }
             }
+            if(attackChance<=0){
+                clickable=false;
+                isAttack=false;
+            }
+            console.log(attackChance);
         });
         });
         // SP 가득차면 보스 공격 가능하게

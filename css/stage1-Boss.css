@@ -24,11 +24,17 @@ body{
     display:flex; justify-content:center; align-items:center;
     position: relative; font-family:Arial, sans-serif;
     color: #f30; font-size: 36px;
+    user-select:none;
+    -webkit-user-select:none;
 }
 section{
     width:1200px; height:800px; background:#fff; border:1px solid #222;
 }
-.play{position:relative;}
+.play{
+    position:relative; background:#000;/* url('../images/DemonicWorld1.png') no-repeat; */
+    background-size:cover;
+
+}
 .play>h2{  
     width:300px;  height:120px;  margin:0px auto 0px;
     font-size: 36px; text-align: center; line-height: 146px;
@@ -40,7 +46,7 @@ section{
     width:900px; height:540px;
     display:flex; flex-flow:row wrap;
     justify-content:center; align-content:center;
-    background:transparent url('../images/Boss.png') no-repeat center top;
+    background:transparent url('../images/Devil.png') no-repeat center top;
 }
 .play>.play_area>.boss>div{
     width:300px; height:180px;

@@ -57,7 +57,6 @@
         const target=document.querySelector(`.s${nameNum} img`);
         //const targetHP=document.querySelector(`.s${nameNum} span`);
         health=2;
-        target.setAttribute('src','images/Skeleton.png');
         target.style.display="block";
         //targetHP.style.display="block";
         clickable=true;
@@ -106,7 +105,6 @@
             if(clickable==true){
                 health--;
                 // ms.dataset.count=1;
-                ms.setAttribute('src','images/Skeleton_damaged.png');
                 if(health<=0){
                     obj--;
                     Ob.innerHTML=obj;
@@ -114,7 +112,6 @@
                     clickable=false;
                     isAttack=false;
                     ms.style.display="none";
-                    ms.setAttribute('src','images/Skeleton.png');
                 }
                 if(obj==0){
                     gameClear();

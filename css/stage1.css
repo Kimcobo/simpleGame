@@ -22,6 +22,14 @@ section{
     width:1200px; height:800px; background:#fff; border:1px solid #222;
 }
 .play, .play2{position:relative;}
+.play{
+    background:transparent url('../images/dirtcavew.png') no-repeat;
+    background-size:cover;
+}
+.play2{
+    background:transparent url('../images/RockCave2.png') no-repeat;
+    background-size:cover;
+}
 .play>h2{  
     width:238px;  height:100px;  margin:0px auto 0px;
     font-size: 36px; text-align: center; line-height: 146px;
@@ -32,7 +40,7 @@ section{
     row-gap:10px;
 }
 .play>.play_area>div{ 
-    width:96px;  height:187px; background:transparent url("../images/portal.png") no-repeat;
+    width:96px;  height:187px; /* background:transparent url("../images/portal.png") no-repeat; */
     background-size:cover;
 }
 .play2>h2{  
@@ -40,12 +48,12 @@ section{
     font-size: 36px; text-align: center; line-height: 146px;
 }
 .play2>.play_area2{
-    width:408px; height:581px; margin:50px auto 0; display:flex; flex-flow:row wrap;
+    width:621px; height:587px; margin:50px auto 0; display:flex; flex-flow:row wrap;
     justify-content:space-between; align-content:space-between; column-gap:60px;
     row-gap:10px;
 }
 .play2>.play_area2>div{ 
-    width:96px;  height:187px; background:transparent url("../images/portal.png") no-repeat;
+    width:167px;  height:189px; /* background:transparent url("../images/portal.png") no-repeat; */
     background-size:cover; position: relative;
 }
 .play>.play_area>div>.zombies{  width:96px;  height:187px; /* overflow:hidden */}
@@ -60,7 +68,7 @@ section{
     width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
     font-weight:bold; color:#f60; 
     background:url("../images/objective.jpg") no-repeat center top;
-    position:absolute; left:150px;  top:150px;
+    position:absolute; left:90px;  top:200px;
 }
 .play>.hp{
     width: 500px; height:20px; position: absolute; left: 50%;

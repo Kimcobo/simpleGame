@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.cdnfonts.com/css/morris-roman');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 body,html{  width:100%;  height:100%;  }
 body,section,h1,button{  margin: 0; padding: 0; }
 img{  display:block;  }
@@ -17,10 +18,23 @@ section{
 }
 span{
     line-height: 48px; cursor: pointer;
+    -webkit-user-select:none;
     user-select:none;
 }
 .init{
     display:flex;
+}
+.init>.img{
+    width: 544px; height: 416px; position: relative;
+}
+.init>.img>img{
+    width: 100%; height: 100%;
+}
+.init>.img>h1{
+    position: absolute; left: 50%; top: 50%; transform:translate(-50%,-50%);
+    font-size: 60px; color: #fff; 
+    text-shadow:-2px 0 #090909, 0 2px #090909, 2px 0 #090909, 0 -2px #090909;
+    font-family:"Roboto",sans-serif; font-weight: 700;
 }
 .init>.opt{
     display: flex; gap: 60px;
@@ -37,6 +51,9 @@ span{
 }
 .init>.etc>.clear{
     color: #fc0;
+}
+.init span{
+    text-shadow:-2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
 }
 .howto{
     display: none;

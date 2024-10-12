@@ -58,18 +58,14 @@
     let takingDamage=false;
     let bossDown=false;
     let isPossibleAttackBoss=false;
-    let completedAchievement=[];
+    // let completedAchievement=[];
     let groggy="";
     // 게임 스타트
     const gameStart=()=>{
         countDownDisplay.style.display="none";
-      // countDownDisplay.remove();
-      //document.body.style.cursor="none";
-      //ax.style.display="block";
-      // 타겟 랜덤으로 나오기
         const recover=()=>{
             // 보스 다운되면 일정 시간 후 다시 일어나고 setInterval 재개
-                bossMain.style.backgroundImage="url('images/Boss.png')";
+                bossMain.style.backgroundImage="url('images/Devil.png')";
                 bossDown=false;
                 isPossibleAttackBoss=false;
                 attack.style.display="none";
@@ -80,21 +76,24 @@
         attackChance=2;
         nameNum=Math.ceil(Math.random()*9); // Math.floor(Math.random()*9)+1
         nameNum2=Math.ceil(Math.random()*9);
-        if(nameNum===nameNum2){
+        while(nameNum===nameNum2){
             nameNum2=Math.ceil(Math.random()*9);
+            if(nameNum!==nameNum2){
+                break;
+            }
         }
         console.log(nameNum2);
         const target=document.querySelector(`.b${nameNum} img`);
         const target2=document.querySelector(`.b${nameNum2} img`);
         target.style.display="block";
         target2.style.display="block";
-        bossMain.style.backgroundImage="url('images/Boss_noarm.png')";
+        bossMain.style.backgroundImage="url('images/Devil_noarm.png')";
         clickable=true;
         isAttack=true;
         setTimeout(()=>{
             target.style.display="none";
             target2.style.display="none";
-            bossMain.style.backgroundImage="url('images/Boss.png')";
+            bossMain.style.backgroundImage="url('images/Devil.png')";
             clickable=false;
             if(attackChance>=1){
                 curHP.style.width=`${parseInt(curHP.style.width)-100}px`;
@@ -109,7 +108,7 @@
             if(isPossibleAttackBoss===true){
                 // 기절한 동안 보스 공격 > 피 다 달면 승리
                 clearInterval(targetTimer);
-                bossMain.style.backgroundImage="url('images/BossDown.png')";
+                bossMain.style.backgroundImage="url('images/DevilDown.png')";
                 // bossDown=true;
                 curStun.style.height="0px";
                 attack.style.display="block";
@@ -117,26 +116,10 @@
                 bossDown=true;
                 groggy=setTimeout(recover,3000);
             }
-            /* if(bossDown==true){
-                console.log('DOWN!');
-                groggy=setTimeout(recover,3000);
-            } */
             console.log(`isPossibleAttackBoss : ${isPossibleAttackBoss}`);
-            // console.log(`BossDown : ${bossDown}`);
         },800);
-        // setTimeout(()=>{},500);
         }
         targetTimer=setInterval(randomTarget,1000);
-        // ==================================
-        /* bossMain.addEventListener('click',()=>{
-            if(isPossibleAttackBoss){
-                curBossHP.style.width=`${parseInt(curBossHP.style.width)-10}px`;
-                if(parseInt(curBossHP.style.width)<=0){
-                    bossMain.style.backgroundImage="url('images/BossDown.png')";
-                    gameClear();
-                }
-            }
-        }); 
         // 해머 움직임
         //document.body.style.cursor="none";
         /*document.addEventListener('mousemove',(e)=>{
@@ -173,9 +156,9 @@
         // SP 가득차면 보스 공격 가능하게
         bossMain.addEventListener('click',()=>{
             if(bossDown){
-                curBossHP.style.width=`${parseInt(curBossHP.style.width)-2}px`;
+                curBossHP.style.width=`${parseInt(curBossHP.style.width)-10}px`;
                 if(parseInt(curBossHP.style.width)<=0){
-                    bossMain.style.backgroundImage="url('images/BossDown.png')";
+                    bossMain.style.backgroundImage="url('images/DevilDown.png')";
                     gameClear();
                 }
             }
@@ -187,6 +170,15 @@ const gameEnd=()=>{
     clearInterval(targetTimer);
     play.style.display="none";
     end.style.display="flex";
+    curHP.style.width="500px";
+    countDown=5;
+    clickable=false;
+    isAttack=false;
+    takingDamage=false;
+    bossDown=false;
+    isPossibleAttackBoss=false;
+    curBossHP.style.width="1000px";
+    curStun.style.height="0px";
     //document.body.style.cursor="default";
     //ax.style.display="none";
 }
@@ -196,15 +188,6 @@ const gameEnd=()=>{
         end.style.display="none";
         countDownDisplay.style.display="flex";
         play.style.display="block";
-        curHP.style.width="500px";
-        countDown=5;
-        clickable=false;
-        isAttack=false;
-        takingDamage=false;
-        bossDown=false;
-        isPossibleAttackBoss=false;
-        curBossHP.style.width="1000px";
-        curStun.style.height="0px";
         InitCount();
         countDownInterval=setInterval(InitCount,1000);
     }
@@ -227,10 +210,3 @@ const gameEnd=()=>{
     selectMain.addEventListener('click',()=>{
         window.location.href="index.html";
     });
-    /* const achieve=document.querySelectorAll('.achieve');
-    const checkAchieve=()=>{
-        achieve.forEach((a)=>{
-        
-        });
-    }
-    */

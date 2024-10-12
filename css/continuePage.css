@@ -24,6 +24,7 @@ section>div{
 span{
     line-height: 48px; cursor: pointer;
     user-select:none;
+    -webkit-user-select:none;
     color:rgba(255,0,0,0.3);
 }
 .back{

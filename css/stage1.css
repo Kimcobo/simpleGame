@@ -67,7 +67,7 @@ section{
 .play>.obj, .play2>.obj2{
     width:191px;  padding-top:30px;  text-align:center;  font-size:28px; 
     font-weight:bold; color:#f60; 
-    background:url("../images/objective.jpg") no-repeat center top;
+    background:url("../images/objective.png") no-repeat center top;
     position:absolute; left:90px;  top:200px;
 }
 .play>.hp{
@@ -168,12 +168,19 @@ section{
 .complete{
     display: none;
 }
-.axe{
+.sword{
     position:absolute;  left:0px;  top:0px;  z-index:100;  pointer-events:none;
-    transition:transform 0.04s;
+    transition:transform 0.04s; width: 210px; height: 60px;
 }
-.axe>img{
-    width: 150px; height: auto; margin: -150px 0px 0px 60px;
+.sword>img{
+    width: 210px; height: auto; margin:0;
+}
+.effect{
+    position:absolute;  left:0px;  top:0px;  z-index:100;  pointer-events:none;
+    width: 210px; height: 60px; display: none;
+}
+.effect>img{
+    width: 210px; height: auto; margin: 0;
 }
 .countdown{
     position:fixed; top:0; left:0; display:flex;

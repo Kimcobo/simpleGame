@@ -56,22 +56,26 @@ section>.innerbox{
     width: 1100px; height: 120px;
     margin-bottom: 10px; box-sizing: border-box; padding:10px;
     /* border: 3px solid #fff; */ border-radius:10px;
-    padding-left:130px; background-image:url("../images/achievement_example.jpg");
+    padding-left:130px; background-image:url("../images/bronze.png");
     background-position:top 10px left 10px; background-repeat:no-repeat;
+    background-size:100px 100px;
 }
-.innerbox .bronze{
+.innerbox>.wrapper>.bronze{
     background-color:var(--bronze);
     filter:brightness(30%);
 }
-.innerbox .silver{
+.innerbox>.wrapper>.silver{
+    background-image:url('../images/silver.png');
     background-color:var(--silver);
     filter:brightness(30%);
 }
-.innerbox .gold{
+.innerbox>.wrapper>.gold{
+    background-image:url('../images/gold.png');
     background-color:var(--gold);
     filter:brightness(30%);
 }
-.innerbox .platinum{
+.innerbox>.wrapper>.platinum{
+    background-image:url('../images/platinum.png');
     background-color:var(--platinum);
     filter:brightness(30%);
 }

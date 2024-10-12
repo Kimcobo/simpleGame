@@ -1,5 +1,6 @@
-//const ax=document.querySelector('.axe');
-    //ax.style.display="none";
+    const sw=document.querySelector('.sword');
+    const ef=document.querySelector('.effect');
+    sw.style.display="none";
     // =========================================
     // 카운트다운
     const countDownDisplay=document.createElement('div');
@@ -63,6 +64,8 @@
     // 게임 스타트
     const gameStart=()=>{
         countDownDisplay.style.display="none";
+        document.body.style.cursor="none";
+        sw.style.display="block";
         const recover=()=>{
             // 보스 다운되면 일정 시간 후 다시 일어나고 setInterval 재개
                 bossMain.style.backgroundImage="url('images/Devil.png')";
@@ -121,19 +124,22 @@
         }
         targetTimer=setInterval(randomTarget,1000);
         // 해머 움직임
-        //document.body.style.cursor="none";
-        /*document.addEventListener('mousemove',(e)=>{
+        document.body.style.cursor="none";
+        document.addEventListener('mousemove',(e)=>{
         // console.log(e.clientX,e.clientY);
-        ax.style.left=e.clientX+'px';
-        ax.style.top=e.clientY+'px';
+        sw.style.left=e.clientX+'px';
+        sw.style.top=e.clientY+'px';
+        ef.style.left=`${e.clientX-30}px`;
+        ef.style.top=`${e.clientY-30}px`;
         });
         document.addEventListener('mousedown',()=>{
-        ax.style.transform="rotate(-68deg)";
-        // setTimeout(()=>{ax.style.transform="rotate(0deg)"},300); // 버그 방지용
+        sw.style.transform="rotate(-68deg)";
+        ef.style.display="block";
+        setTimeout(()=>{ef.style.display="none"},100);
         });
         document.addEventListener('mouseup',()=>{
-        ax.style.transform="rotate(0deg)";
-        });*/
+        sw.style.transform="rotate(0deg)";
+        });
     }
     document.querySelectorAll('.BossAttack>img').forEach((ms)=>{
         ms.addEventListener('click',()=>{
@@ -179,8 +185,8 @@ const gameEnd=()=>{
     isPossibleAttackBoss=false;
     curBossHP.style.width="1000px";
     curStun.style.height="0px";
-    //document.body.style.cursor="default";
-    //ax.style.display="none";
+    document.body.style.cursor="default";
+    sw.style.display="none";
 }
     // ==============================
     // 다시 시작
@@ -204,8 +210,8 @@ const gameEnd=()=>{
         clearTimeout(groggy);
         clearInterval(targetTimer);
         clear.style.display="flex";
-        //document.body.style.cursor="default";
-        //ax.style.display="none";
+        document.body.style.cursor="default";
+        sw.style.display="none";
     }
     selectMain.addEventListener('click',()=>{
         window.location.href="index.html";

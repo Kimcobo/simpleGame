@@ -1,5 +1,6 @@
-//const ax=document.querySelector('.axe');
-    //ax.style.display="none";
+    const sw=document.querySelector('.sword');
+    const ef=document.querySelector('.effect');
+    sw.style.display="none";
     // =========================================
     // 카운트다운
     const countDownDisplay=document.createElement('div');
@@ -49,8 +50,8 @@
       localStorage.setItem('progress1-1','yes');
       countDownDisplay.style.display="none";
       // countDownDisplay.remove();
-      //document.body.style.cursor="none";
-      //ax.style.display="block";
+      document.body.style.cursor="none";
+      sw.style.display="block";
       // 타겟 랜덤으로 나오기
       const randomTarget=()=>{
         nameNum=Math.ceil(Math.random()*9); // Math.floor(Math.random()*9)+1
@@ -91,19 +92,22 @@
         });
       }); 
       // 해머 움직임
-      //document.body.style.cursor="none";
-      /*document.addEventListener('mousemove',(e)=>{
+      document.body.style.cursor="none";
+      document.addEventListener('mousemove',(e)=>{
         // console.log(e.clientX,e.clientY);
-      ax.style.left=e.clientX+'px';
-        ax.style.top=e.clientY+'px';
+        sw.style.left=e.clientX+'px';
+        sw.style.top=e.clientY+'px';
+        ef.style.left=`${e.clientX-30}px`;
+        ef.style.top=`${e.clientY-30}px`;
       });
       document.addEventListener('mousedown',()=>{
-        ax.style.transform="rotate(-68deg)";
-        // setTimeout(()=>{ax.style.transform="rotate(0deg)"},300); // 버그 방지용
+        sw.style.transform="rotate(-68deg)";
+        ef.style.display="block";
+        setTimeout(()=>{ef.style.display="none"},100);
       });
       document.addEventListener('mouseup',()=>{
-        ax.style.transform="rotate(0deg)";
-      });*/
+        sw.style.transform="rotate(0deg)";
+      });
     }
     // =================================
     // 게임 끝
@@ -111,8 +115,15 @@ const gameEnd=()=>{
   clearInterval(targetTimer);
   play.style.display="none";
   end.style.display="flex";
-  //document.body.style.cursor="default";
-  //ax.style.display="none";
+  document.body.style.cursor="default";
+  sw.style.display="none";
+  curHP.style.width="500px";
+  countDown=5;
+  obj=20;
+  clickable=false;
+  isAttack=false;
+  takingDamage=false;
+  Ob.innerHTML=obj;
 }
     // ==============================
     // 다시 시작
@@ -120,13 +131,6 @@ const gameEnd=()=>{
       end.style.display="none";
       countDownDisplay.style.display="flex";
       play.style.display="block";
-      curHP.style.width="500px";
-      countDown=5;
-      obj=20;
-      clickable=false;
-      isAttack=false;
-      takingDamage=false;
-      Ob.innerHTML=obj;
       InitCount();
       countDownInterval=setInterval(InitCount,1000);
     }
@@ -143,8 +147,8 @@ const gameEnd=()=>{
       localStorage.setItem('progress1-2','yes');
       clearInterval(targetTimer);
       clear.style.display="flex";
-      //document.body.style.cursor="default";
-      //ax.style.display="none";
+      document.body.style.cursor="default";
+      sw.style.display="none";
     }
     selectNext.addEventListener('click',()=>{
       window.location.href="stage1-2.html";
